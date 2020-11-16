@@ -8,11 +8,15 @@ package com.mycompany.proyectolinea.conexion;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Named;
 
 /**
  *
  * @author usuario
  */
+@Named(value = "conexionController")
+@RequestScoped
 public class conexion {
      Connection conect = null;
     public Connection conexion() throws SQLException  {
@@ -30,4 +34,13 @@ public class conexion {
             return conect;
             
     }
+
+    public Connection getConect() {
+        return conect;
+    }
+
+    public void setConect(Connection conect) {
+        this.conect = conect;
+    }
+    
 }
