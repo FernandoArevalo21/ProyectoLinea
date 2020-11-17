@@ -5,6 +5,7 @@
  */
 package com.mycompany.proyectolinea.controller;
 
+import com.mycompany.proyectolinea.servic.Loginservice;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 
@@ -15,7 +16,7 @@ import javax.enterprise.context.RequestScoped;
 @Named(value = "loginController")
 @RequestScoped
 public class LoginController {
-String username;
+String correo;
 String password;
     /**
      * Creates a new instance of LoginController
@@ -23,15 +24,16 @@ String password;
     public LoginController() {
     }
     public void Login(){
-        System.out.println("Entro " + username + " " + password);
+        System.out.println("Entro " + correo + " " + password);
+        Loginservice service = new Loginservice();
     }
 
-    public String getUsername() {
-        return username;
+    public String getCorreo() {
+        return correo;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
     public String getPassword() {
