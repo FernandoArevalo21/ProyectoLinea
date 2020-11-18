@@ -30,17 +30,17 @@ public class datos {
     public  void  cargarDatosComprador() throws SQLException, ClassNotFoundException{
         RegistroController registro = new  RegistroController();
        Class.forName("com.mysql.jdbc.Driver");
-         conect = DriverManager.getConnection("jdbc:mysql://localhost/proyectolinea","root","");
+         conect = DriverManager.getConnection("jdbc:mysql://localhost/disco_tienda","root","");
          st = conect.createStatement();
-        // String query= "INSERT INTO comprador(nombre,apellido,correo,username, password) VALUES ('?','?','?','?','?')";
-          //st.executeUpdate(query);
-         PreparedStatement pps = conect.prepareStatement("INSERT INTO comprador(nombre,apellido,correo,username, password) VALUES ('?','?','?','?','?')");
+         String query= "INSERT INTO comprador(nombre,apellido,correo,username, password) VALUES ('','','','','')";
+          st.executeUpdate(query);
+         /*PreparedStatement pps = conect.prepareStatement("INSERT INTO comprador(nombre,apellido,correo,username, password) VALUES ('?','?','?','?','?')");
         pps.setString(1, registro.getNombre());
          pps.setString(2, registro.getApellido());
          pps.setString(3, registro.getCorreo());
          pps.setString(4, registro.getUsername());
          pps.setString(5, registro.getPassword());
-         pps.executeUpdate();
+         pps.executeUpdate();*/
           System.out.println("Usuario ingresado");  
     }
     

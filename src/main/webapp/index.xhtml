@@ -37,8 +37,10 @@
         <div class="contendor">
             <h1 class="titulo">Disco Stu</h1>
             <div class="menu">
-                <p:commandButton type="button"  value="Login" action="faces/Login.xhtml" class="login"/>
-                <p:commandButton type="button" icon="pi pi-check" value="Registrarse"  action="#{indexController.login()}" class="insertar"/>
+                <h:form>
+                <p:commandButton   value="Login" action="#{indexController.login()}" class="login"/>
+                <p:commandButton   value="Registrarse"  actionListener="#{indexController.registro()}" class="insertar"/>
+                </h:form>
             </div>
         </div>
     </h:body>
