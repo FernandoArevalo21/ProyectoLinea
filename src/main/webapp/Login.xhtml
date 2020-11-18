@@ -6,10 +6,18 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <h:head>
+        <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light" rel="stylesheet"></link>
+            <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+        <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+                <link href="https://fonts.googleapis.com/css2?family=Special+Elite" rel="stylesheet"></link>
         <title>Login</title>
         <style>
+            
+            body{
+                background: rgb(223,232,231);
+            }
             .contenedor{
-                background: #6CB8B1; 
+                background:rgb(171,241,232);
                 margin: 0 auto;
                 width: 500px;
                 height: 500px;
@@ -18,11 +26,10 @@
                 border-top-left-radius: 20px;
                 border-top-right-radius: 20px;
             }
-            h1{
+            h1.titulo{
                 text-align: center;
-                text-transform: uppercase;
-                color: white;
-                padding-top: 10px;
+                font-family: 'Shadows Into Light', cursive;
+                font-size: 60px;
             }
             .correo{
                 margin-left: 30px; 
@@ -37,23 +44,34 @@
                 margin-top: 10px;
                 text-align: center;
             }
+            .username, .pass{
+                font-family: 'Special Elite', cursive;
+                margin-left:20px;
+            }
             .boton:hover{
                 background-color: yellow;
                 cursor: pointer;
+            }
+            .boton{
+                margin: 0 auto;
+                margin-top: 20px;
+                font-family: 'Special Elite', cursive;
             }
         </style>
     </h:head>
     <h:body>
         <div class="contenedor">
-            <h1>Login</h1> 
+            <h1 class="titulo">Login</h1> 
             <h:form id="contenedor">
-                <p:outputLabel for="default" value="Correo:" />
+                <p:outputLabel for="default" value="Correo:" class="username"/>
                 <p:inputText  required="true" value="#{loginController.correo}"  class="correo" />
                 <p:message for="default" />
-                <p:outputLabel for="default" value="Password:" />
-                <p:password required="true" id="default" value="#{loginController.password}"  class="contrasena" />
+                <p:outputLabel for="default" value="Password:" class="pass" />
+                <p:password required="true" id="default" value="#{loginController.password}"  class="contrasena"  />
                 <p:messages id="messages" showDetail="true" closable="true">
-                    <p:commandButton actionListener="#{loginController.Login()}"  value="Ingresar" class="boton" update="contenedor" ></p:commandButton> 
+                    <div class="btn_ingresar">
+                        <p:commandButton actionListener="#{loginController.Login()}"  value="Ingresar" class="boton" update="contenedor" ></p:commandButton> 
+                    </div>
                 </p:messages>
             </h:form>
         </div>
