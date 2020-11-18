@@ -36,15 +36,8 @@ public class datos {
          System.out.println(correo);
          System.out.println(username);
          System.out.println(password);
-         //String query= "INSERT INTO comprador(nombre,apellido,correo,username, password) VALUES (,'','','','')";
-          //st.executeUpdate(query);
-        /*PreparedStatement pps = conect.prepareStatement("INSERT INTO comprador(nombre,apellido,correo,username, password) VALUES ('?','?','?','?','?')");
-        pps.setString(1, nombre);
-         pps.setString(2, apellido);
-         pps.setString(3, correo);
-         pps.setString(4, username);
-         pps.setString(5, password);
-         pps.executeUpdate();*/
+         String query= "INSERT INTO comprador(nombre,apellido,correo,username, password) VALUES ('"+ nombre +"','"+apellido+"','"+correo+"','"+username+"','"+password+"')";
+        st.executeUpdate(query);
           System.out.println("Usuario ingresado");  
     }
     
