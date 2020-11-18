@@ -22,24 +22,28 @@ import javax.swing.JOptionPane;
  * @author usuario
  */
 
-@Named(value = "datosController")
-@RequestScoped
+//@Named(value = "datosController")
+//@RequestScoped
 public class datos {
        Connection conect = null;
        Statement st;
-    public  void  cargarDatosComprador() throws SQLException, ClassNotFoundException{
-        RegistroController registro = new  RegistroController();
+    public  void  cargarDatosComprador(String nombre,String apellido, String correo, String username, String password) throws SQLException, ClassNotFoundException{
        Class.forName("com.mysql.jdbc.Driver");
          conect = DriverManager.getConnection("jdbc:mysql://localhost/disco_tienda","root","");
          st = conect.createStatement();
-         String query= "INSERT INTO comprador(nombre,apellido,correo,username, password) VALUES ('','','','','')";
-          st.executeUpdate(query);
-         /*PreparedStatement pps = conect.prepareStatement("INSERT INTO comprador(nombre,apellido,correo,username, password) VALUES ('?','?','?','?','?')");
-        pps.setString(1, registro.getNombre());
-         pps.setString(2, registro.getApellido());
-         pps.setString(3, registro.getCorreo());
-         pps.setString(4, registro.getUsername());
-         pps.setString(5, registro.getPassword());
+         System.out.println(nombre);
+         System.out.println(apellido);
+         System.out.println(correo);
+         System.out.println(username);
+         System.out.println(password);
+         //String query= "INSERT INTO comprador(nombre,apellido,correo,username, password) VALUES (,'','','','')";
+          //st.executeUpdate(query);
+        /*PreparedStatement pps = conect.prepareStatement("INSERT INTO comprador(nombre,apellido,correo,username, password) VALUES ('?','?','?','?','?')");
+        pps.setString(1, nombre);
+         pps.setString(2, apellido);
+         pps.setString(3, correo);
+         pps.setString(4, username);
+         pps.setString(5, password);
          pps.executeUpdate();*/
           System.out.println("Usuario ingresado");  
     }

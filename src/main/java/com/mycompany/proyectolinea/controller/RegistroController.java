@@ -7,6 +7,7 @@ package com.mycompany.proyectolinea.controller;
 
 import com.mycompany.proyectolinea.conexion.datos;
 import com.mycompany.proyectolinea.pojo.Registro;
+import java.sql.SQLException;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 
@@ -29,8 +30,11 @@ public class RegistroController {
     public RegistroController() {
        
     }
-    public void registro(){
+    public void registro() throws SQLException, ClassNotFoundException{
          System.out.println(nombre+""+apellido+""+correo+""+username+""+password);
+         setNombre(nombre);
+         datos dt= new datos();
+         dt.cargarDatosComprador(nombre, apellido,correo,username,password);
     }
 
     public String getNombre() {
