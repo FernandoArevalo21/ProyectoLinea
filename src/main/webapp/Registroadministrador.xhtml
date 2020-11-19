@@ -4,22 +4,60 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Facelet Title</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+            <link href="https://fonts.googleapis.com/css2?family=Fredoka+One" rel="stylesheet"></link>
+        <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+            <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light" rel="stylesheet"></link>
+        <title>Registrar administrador</title>
+        <style>
+            body{
+                background: rgb(223,232,231);
+            }
+            legend.datos{
+                font-family: 'Fredoka One', cursive;
+                font-size: 40px;
+            }
+            h1.titulo{
+                text-align: center;
+                font-family: 'Shadows Into Light', cursive;
+                font-size: 60px;
+            }
+            fieldset.formulario{
+                margin: 0 auto;
+                width: 100px;
+                height: 380px;
+            }
+            .btn_insertar{
+                margin-top: 20px;
+                font-family: 'Special Elite', cursive;
+                color: black;
+            }
+            .informacion{
+                font-family: 'Special Elite', cursive;
+            }
+            legend.datos{
+                font-size: 18px;
+            }
+        </style>
     </h:head>
     <h:body>
-        <h:form>      
-            <p:outputLabel  value="Nombre:" />
-            <p:inputText   value="#{registroadController.nombre}"/>
-                <p:outputLabel  value="Apellido:"  />
+        <h1 class="titulo">Disco Stu</h1>
+        <fieldset class="formulario">
+            <legend class="datos">Registrar administrador</legend>
+            <h:form>      
+                <p:outputLabel  value="Nombre:" class="informacion" />
+                <p:inputText   value="#{registroadController.nombre}"/>
+                <p:outputLabel  value="Apellido:" class="informacion" />
                 <p:inputText  value="#{registroadController.apellido}" />
-                <p:outputLabel  value="Correo:"   />
+                <p:outputLabel  value="Correo:" class="informacion"  />
                 <p:inputText   value="#{registroadController.correo}"/>
-                <p:outputLabel  value="Username:" />
+                <p:outputLabel  value="Username:" class="informacion" />
                 <p:inputText   value="#{registroadController.username}"/>
-                <p:outputLabel  value="Password:"   />
+                <p:outputLabel  value="Password:" class="informacion"  />
                 <p:password  value="#{registroadController.password}"/>
-            <p:commandButton actionListener="#{registroadController.registro()}"  value="Registrar" ></p:commandButton> 
-        </h:form>
+                <p:commandButton actionListener="#{registroadController.registro()}"  value="Registrar" class="btn_insertar"  ></p:commandButton> 
+            </h:form>
+        </fieldset>
     </h:body>
 </html>
 

@@ -89,9 +89,9 @@ public class AdministradorControlador {
     public void update() throws IOException {
         FacesContext.getCurrentInstance().getExternalContext().redirect("/ProyectoLinea/faces/Artista.xhtml");
     }
- 
-    public void delete() {
-        addMessage("Success", "Data deleted");
+
+    public void delete() throws IOException {
+        FacesContext.getCurrentInstance().getExternalContext().redirect("/ProyectoLinea/faces/Registroadministrador.xhtml");
     }
  
     public void addMessage(String summary, String detail) {
