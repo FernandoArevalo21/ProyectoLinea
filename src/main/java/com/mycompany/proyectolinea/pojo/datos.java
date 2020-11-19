@@ -42,4 +42,15 @@ public class datos {
         }
            
       }
+     public void cargarDatosAdmin(String nombre, String apellido, String correo, String username, String password){
+        try {
+            System.out.println(nombre);
+            st = conexion.conexion().createStatement();
+            String query = "INSERT INTO admin(nombre,apellido,correo,username, password) VALUES ('" + nombre + "','" + apellido + "','" + correo + "','" + username + "','" + password + "')";
+            st.executeUpdate(query);
+            System.out.println("Usuario ingresado");
+        } catch (SQLException e) {
+            e.setNextException(e);
+        }
+    }
 }
