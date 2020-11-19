@@ -5,21 +5,59 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
+        <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+            <link href="https://fonts.googleapis.com/css2?family=Fredoka+One" rel="stylesheet"></link>
+        <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+            <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light" rel="stylesheet"></link>
         <title>Artista</title>
+        <style>
+            body{
+                background: rgb(223,232,231);
+            }
+            legend.datos{
+                font-family: 'Fredoka One', cursive;
+                font-size: 40px;
+            }
+            h1.titulo{
+                text-align: center;
+                font-family: 'Shadows Into Light', cursive;
+                font-size: 60px;
+            }
+            fieldset.formulario{
+                margin: 0 auto;
+                width: 100px;
+                height: 380px;
+            }
+            .btn_insertar{
+                margin-top: 20px;
+                font-family: 'Special Elite', cursive;
+                color: black;
+            }
+            .informacion{
+                font-family: 'Special Elite', cursive;
+            }
+            legend.datos{
+                font-size: 25px;
+            }
+        </style>
     </h:head>
     <h:body>
-        <h:form>
-         <p:outputLabel  value="Nombre artista:"/>
-         <p:inputText   value="#{artistaController.nombre_artista}"/>
-         <p:outputLabel  value="Genero musical:" />
-         <p:inputText   value="#{artistaController.genero_musical}"/>
-         <p:outputLabel  value="Imagen:" />
-         <p:outputLabel  value="Nacionalidad:" />
-         <p:inputText   value="#{artistaController.nacionalidad}"/>
-         <p:outputLabel  value="Fecha nacimiento:" />
-         <p:inputText   value="#{artistaController.fecha_nacimiento}"/>
-         <p:commandButton actionListener="#{artistaController.artista()}"  value="Registrar"  ></p:commandButton> 
-         </h:form>
+        <h1 class="titulo">Disco Stu</h1>
+        <fieldset class="formulario">
+            <legend class="datos">Registrar artista</legend>
+            <h:form>
+                <p:outputLabel  value="Nombre artista:" class="informacion"/>
+                <p:inputText   value="#{artistaController.nombre_artista}"/>
+                <p:outputLabel  value="Genero musical:" class="informacion"/>
+                <p:inputText   value="#{artistaController.genero_musical}"/>
+                <p:outputLabel  value="Imagen:" class="informacion" />
+                <p:outputLabel  value="Nacionalidad:"  class="informacion"/>
+                <p:inputText   value="#{artistaController.nacionalidad}"/>
+                <p:outputLabel  value="Fecha nacimiento:" class="informacion" />
+                <p:inputText   value="#{artistaController.fecha_nacimiento}"/>
+                <p:commandButton actionListener="#{artistaController.artista()}"  value="Registrar" class="btn_insertar"  ></p:commandButton> 
+            </h:form>
+        </fieldset>
     </h:body>
 </html>
 
