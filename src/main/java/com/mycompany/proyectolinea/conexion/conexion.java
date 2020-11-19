@@ -16,7 +16,7 @@ import java.sql.SQLException;
 
 public class conexion {
      Connection conect = null;
-    public Connection conexion() throws SQLException  {
+    public Connection conexion() throws SQLException, ClassNotFoundException  {
         System.out.println("conexión"+conect);
          try {
                 //Cargamos el Driver MySQL
@@ -24,7 +24,7 @@ public class conexion {
                 //Se hace la conexión con el localhost y con la base de datos creada que en éste caso se llamí agata y "root" que por lo general es el usuario de ingreso
                 conect = DriverManager.getConnection("jdbc:mysql://localhost/disco_tienda","root","");
               System.out.println("conexion establecida");
-            } catch (ClassNotFoundException | SQLException e) {
+            } catch (SQLException e) {
                 System.out.println("error de conexion");
             }
             return conect;

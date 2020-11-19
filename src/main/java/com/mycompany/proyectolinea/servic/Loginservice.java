@@ -5,37 +5,34 @@
  */
 package com.mycompany.proyectolinea.servic;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
+import com.mycompany.proyectolinea.conexion.conexion;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import javax.enterprise.context.RequestScoped;
-import javax.faces.bean.ViewScoped;
-import javax.inject.Named;
 
 /**
  *
  * @author usuario
  */
 public class Loginservice {
-    //mirar como hacer pruebas porque no sea podido ejecutar
-     Connection conect = null;
-       Statement st;
-    public void VerDatosComprador() throws SQLException, ClassNotFoundException{
-         Class.forName("com.mysql.jdbc.Driver");
-         conect = DriverManager.getConnection("jdbc:mysql://localhost/proyectolinea","root","");
-         st = conect.createStatement();
-         ResultSet rs = st.executeQuery("SELECT*FROM comprador");
-         while(rs.next()){
+     conexion conexion = new conexion();
+    Statement st;
+    public void VerDatosComprador(String correo, String password) {
+        try {
+            st = conexion.conexion().createStatement();
+           ResultSet rs = st.executeQuery("SELECT*FROM comprador");
+            System.out.println("Usuario ingresado");
+              while(rs.next()){
              int id_comprador = rs.getInt("id_comprador");
              String nombre = rs.getString("nombre");
              String apellido = rs.getString("apellido");
-             String correo = rs.getString ("correo");
+             //String correo = rs.getString ("correo");
              String username = rs.getString("username");
-             String password = rs.getString("password");
+             //String password = rs.getString("password");
              System.out.println(String.format("%s,%s,%s,%s,%s,%s",id_comprador,nombre,apellido,correo,username,password));
          }
-         
+        } catch (SQLException e) {
+            e.setNextException(e);
+        }    
     }
 }

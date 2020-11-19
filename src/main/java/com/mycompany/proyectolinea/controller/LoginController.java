@@ -26,6 +26,7 @@ String password;
     public void Login(){
         System.out.println("Entro " + correo + " " + password);
         Loginservice service = new Loginservice();
+        service.VerDatosComprador(correo,password);
     }
 
     public String getCorreo() {
